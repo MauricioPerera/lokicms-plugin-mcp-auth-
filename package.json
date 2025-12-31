@@ -1,6 +1,6 @@
 {
   "name": "lokicms-plugin-mcp-auth",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Role-based authentication and tool filtering plugin for LokiCMS MCP servers",
   "keywords": [
     "lokicms",
@@ -52,6 +52,7 @@
   },
   "files": [
     "dist",
+    "server.ts",
     "README.md",
     "LICENSE",
     "CHANGELOG.md"
@@ -59,6 +60,10 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
+    "start": "tsx server.ts",
+    "start:admin": "AGENT_ROLE=admin tsx server.ts",
+    "start:editor": "AGENT_ROLE=editor tsx server.ts",
+    "start:viewer": "AGENT_ROLE=viewer tsx server.ts",
     "test": "tsx src/__tests__/index.test.ts",
     "test:watch": "tsx watch src/__tests__/index.test.ts",
     "lint": "eslint src --ext .ts",

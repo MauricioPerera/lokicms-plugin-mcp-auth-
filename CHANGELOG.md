@@ -5,6 +5,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2025-12-31
+
+### Added
+
+- `server.ts` - Standalone MCP server with role-based authentication
+- npm scripts for starting server with different roles:
+  - `npm start` - Start server (uses AGENT_ROLE env var)
+  - `npm run start:admin` - Start with admin role
+  - `npm run start:editor` - Start with editor role
+  - `npm run start:viewer` - Start with viewer role
+- Integration with LokiCMS tools (content, taxonomy, users, structure, system)
+- Automatic tool filtering based on configured role
+- Permission checks before tool execution
+- Detailed logging to stderr for debugging
+
+### Changed
+
+- Updated package.json to include server.ts in published files
+
 ## [1.0.0] - 2025-12-30
 
 ### Added
